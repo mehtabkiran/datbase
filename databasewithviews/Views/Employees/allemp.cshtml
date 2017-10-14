@@ -1,0 +1,61 @@
+@model IEnumerable<databasewithviews.Models.Employee>
+
+@{
+    ViewData["Title"] = "allemp";
+}
+
+<h2>allemp</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmpId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmpName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmpAge)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmpScale)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmpSalary)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpScale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpSalary)
+            </td>
+            <td>
+
+                <a href="/Employees/detail?EmpId=@item.EmpId" class="btn btn-default"> Details </a>
+                <a href="/Employees/edit?EmpId=@item.EmpId" class="btn btn-warning"> Edit </a>
+                <a href="/Employees/delete?EmpId=@item.EmpId" class="btn btn-danger"> Delete </a>
+             
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+@model databasewithviews.Models.Employee
+
+@{
+    ViewData["Title"] = "create";
+}
+
+<h2>create</h2>
+@Html.AntiForgeryToken();
+<form asp-action="create" method="post">
+    <div class="form-horizontal">
+        <h4>Employee</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="EmpName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpName" class="form-control" />
+                <span asp-validation-for="EmpName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmpAge" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpAge" class="form-control" />
+                <span asp-validation-for="EmpAge" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmpScale" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpScale" class="form-control" />
+                <span asp-validation-for="EmpScale" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmpSalary" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpSalary" class="form-control" />
+                <span asp-validation-for="EmpSalary" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="/main">Back to main menu</a>
+</div>
+

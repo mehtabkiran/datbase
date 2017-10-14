@@ -1,0 +1,60 @@
+@model databasewithviews.Models.Employee
+
+@{
+    ViewData["Title"] = "edit";
+}
+
+<h2>edit</h2>
+
+<form asp-action="edit" method="post">
+    <div class="form-horizontal">
+        <h4>Employee</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="EmpId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpId" class="form-control" readonly/>
+                <span asp-validation-for="EmpId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmpName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpName" class="form-control" />
+                <span asp-validation-for="EmpName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmpAge" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpAge" class="form-control" />
+                <span asp-validation-for="EmpAge" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmpScale" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpScale" class="form-control" />
+                <span asp-validation-for="EmpScale" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmpSalary" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EmpSalary" class="form-control" />
+                <span asp-validation-for="EmpSalary" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
